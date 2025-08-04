@@ -1,12 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Religiones, Órdenes y Fraternidades</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Religiones, Órdenes y Fraternidades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding-top: 60px;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #003366;
+      color: white;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      color: #003366;
+    }
+
+    footer {
+      text-align: center;
+      margin: 40px 0;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
+
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#religiones">Religiones</a>
+    <a href="#ordenes">Órdenes</a>
+    <a href="#fraternidades">Fraternidades</a>
+    <a href="#miembro">¿Desea ser miembro?</a>
+  </nav>
+
+  <section id="inicio">
     <h1>Bienvenidos</h1>
-    <p>Este es un proyecto para explorar religiones, órdenes y fraternidades.</p>
+    <p>Este es un espacio para explorar distintas religiones, órdenes y fraternidades alrededor del mundo, su historia, valores y tradiciones.</p>
+  </section>
+
+  <section id="religiones">
+    <h2>Religiones</h2>
+    <p>Las religiones son sistemas de creencias que conectan a las personas con lo divino. Algunas de las más conocidas son el cristianismo, islam, judaísmo, budismo e hinduismo.</p>
+  </section>
+
+  <section id="ordenes">
+    <h2>Órdenes</h2>
+    <p>Órdenes como los templarios, benedictinos o dominicos han marcado la historia con estructuras jerárquicas y propósitos espirituales o sociales.</p>
+  </section>
+
+  <section id="fraternidades">
+    <h2>Fraternidades</h2>
+    <p>Las fraternidades son asociaciones que reúnen personas con fines filosóficos, morales o de ayuda mutua, como la masonería u otras organizaciones iniciáticas.</p>
+  </section>
+
+  <section id="miembro">
+    <h2>¿Desea ser miembro de nuestra comunidad?</h2>
+    <p>Estamos construyendo una comunidad para compartir, aprender y dialogar sobre estos temas. Pronto podrás registrarte para recibir novedades y participar en debates.</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Proyecto Religiones, Órdenes y Fraternidades
+  </footer>
+
 </body>
 </html>
