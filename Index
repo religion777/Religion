@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Religiones, Órdenes y Fraternidades</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #f9f9f9;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            color: #00539C;
+        }
+        section {
+            margin-bottom: 30px;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Religiones, Órdenes y Fraternidades</h1>
+        <p>Explorando tradiciones, historia y estructuras</p>
+    </header>
+
+    <section>
+        <h2>Religiones</h2>
+        <p>Las religiones han sido una parte fundamental de la cultura humana, abarcando creencias, rituales y moralidades diversas.</p>
+    </section>
+
+    <section>
+        <h2>Órdenes</h2>
+        <p>Las órdenes son comunidades organizadas con fines espirituales o sociales, como las órdenes monásticas o militares.</p>
+    </section>
+
+    <section>
+        <h2>Fraternidades</h2>
+        <p>Las fraternidades agrupan personas con intereses o valores comunes, muchas veces con una estructura ritualística y simbólica.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Tu Nombre o Tu Proyecto
+    </footer>
+</body>
+</html>
