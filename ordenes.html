@@ -4,146 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Órdenes - Proyecto Religiones, Órdenes y Fraternidades</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
-      padding-top: 80px;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #1b2a48;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    .nav-container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 15px 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 8px 16px;
-      border-radius: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: #305080;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto 80px auto;
-      background: white;
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-
-    h1, h2, h3 {
-      color: #1b2a48;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      font-size: 2.8rem;
-      text-align: center;
-    }
-
-    h2 {
-      margin-top: 30px;
-      margin-bottom: 15px;
-      font-size: 2rem;
-    }
-
-    h3 {
-      margin-top: 20px;
-      margin-bottom: 10px;
-      font-size: 1.5rem;
-      color: #2a3d7a;
-    }
-
-    p {
-      font-size: 1.1rem;
-      margin-bottom: 16px;
-    }
-
-    ul.index-list {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 40px;
-    }
-
-    ul.index-list li {
-      margin-bottom: 8px;
-    }
-
-    ul.index-list li a {
-      text-decoration: none;
-      color: #305080;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-
-    ul.index-list li a:hover {
-      text-decoration: underline;
-      color: #1b2a48;
-    }
-
-    footer {
-      text-align: center;
-      padding: 25px 10px;
-      color: #777;
-      font-size: 0.9rem;
-      border-top: 1px solid #ddd;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    @media (max-width: 600px) {
-      nav a {
-        padding: 10px 12px;
-        font-size: 0.9rem;
-      }
-      main {
-        padding: 20px 20px;
-        margin: 20px 15px 60px 15px;
-      }
-      h1 {
-        font-size: 2rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      h3 {
-        font-size: 1.3rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/estilos.css" />
 </head>
 <body>
 
@@ -158,7 +19,7 @@
   </nav>
 
   <main>
-    <h1>Órdenes</h1>
+    <h1 class="orden-header">Órdenes</h1>
 
     <section id="descripcion">
       <h2>Descripción General</h2>
