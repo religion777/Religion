@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://religion777.github.io/Religion/index.html</loc>
+  </url>
+
+  <!-- Secciones principales -->
+  <url>
+    <loc>https://religion777.github.io/Religion/religiones.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/fraternidades.html</loc>
+  </url>
+
+  <!-- Ejemplos de órdenes (completá con todas las que ya creaste) -->
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/templarios.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/jesuitas.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/benedictinos.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/franciscanos.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/sanjuanistas.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/cartujos.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/dominicos.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/mercedarios.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/minimos.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/odom.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/santisimo_salvador.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/santo_sepulcro.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/trinitarios.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/orden-de-los-augures.html</loc>
+  </url>
+  <url>
+    <loc>https://religion777.github.io/Religion/ordenes/amanecer_dorado.html</loc>
+  </url>
+
+  <!-- Agregá más si necesitás -->
+
+</urlset>
