@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Religiones, Órdenes y Fraternidades</title>
   <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    /* Estilo del buscador */
+    .search-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+    .search-container input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 25px;
+      font-size: 1rem;
+    }
+    .search-results {
+      margin-top: 10px;
+      list-style: none;
+      padding: 0;
+    }
+    .search-results li {
+      margin: 5px 0;
+    }
+    .search-results a {
+      text-decoration: none;
+      color: #2a4d69;
+    }
+    .search-results a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
@@ -20,7 +50,13 @@
 
   <main>
     <h1>Religiones, Órdenes y Fraternidades: Historia y Legado</h1>
-    
+
+    <!-- Buscador -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Buscar religión, orden o fraternidad..." />
+      <ul id="resultsList" class="search-results"></ul>
+    </div>
+
     <p>La historia humana está profundamente entrelazada con la influencia de las religiones, órdenes y fraternidades. A lo largo de los siglos, estas instituciones han moldeado culturas, sociedades y filosofías, dejando una huella imborrable en el desarrollo del pensamiento, las costumbres y las estructuras sociales.</p>
     
     <p>Este proyecto nace del compromiso de recopilar y difundir información rigurosa y accesible sobre estas diversas tradiciones. Gracias al trabajo minucioso de historiadores, investigadores y particulares apasionados, ofrecemos un espacio para el conocimiento y el diálogo.</p>
@@ -37,6 +73,37 @@
   <footer>
     &copy; 2025 Proyecto Religiones, Órdenes y Fraternidades
   </footer>
+
+  <script>
+    const pages = [
+      { name: "Budismo", url: "religiones/budismo.html" },
+      { name: "Caodaísmo", url: "religiones/caodaismo.html" },
+      { name: "Candomblé", url: "religiones/candomble.html" },
+      { name: "Chamanismo", url: "religiones/chamanismo.html" },
+      { name: "Confucianismo", url: "religiones/confucianismo.html" },
+      { name: "Cristianismo", url: "religiones/cristianismo.html" },
+      // Aquí irán todas las demás religiones, órdenes y fraternidades
+    ];
+
+    const searchInput = document.getElementById('searchInput');
+    const resultsList = document.getElementById('resultsList');
+
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value.toLowerCase();
+      resultsList.innerHTML = '';
+      if (query) {
+        const filtered = pages.filter(page => page.name.toLowerCase().includes(query));
+        filtered.forEach(page => {
+          const li = document.createElement('li');
+          const link = document.createElement('a');
+          link.href = page.url;
+          link.textContent = page.name;
+          li.appendChild(link);
+          resultsList.appendChild(li);
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
