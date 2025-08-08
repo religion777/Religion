@@ -6,30 +6,33 @@
   <title>Religiones, Órdenes y Fraternidades</title>
   <link rel="stylesheet" href="css/estilos.css">
   <style>
-    /* Estilo del buscador */
+    /* Estilos rápidos para el buscador */
     .search-container {
-      margin: 20px 0;
+      max-width: 400px;
+      margin: 20px auto;
       text-align: center;
     }
     .search-container input {
+      width: 100%;
       padding: 10px;
-      width: 80%;
-      max-width: 400px;
+      font-size: 1em;
       border: 1px solid #ccc;
-      border-radius: 25px;
-      font-size: 1rem;
+      border-radius: 5px;
     }
     .search-results {
-      margin-top: 10px;
       list-style: none;
       padding: 0;
+      margin-top: 10px;
     }
     .search-results li {
+      background: #f4f4f4;
       margin: 5px 0;
+      padding: 10px;
+      border-radius: 5px;
     }
     .search-results a {
       text-decoration: none;
-      color: #2a4d69;
+      color: #333;
     }
     .search-results a:hover {
       text-decoration: underline;
@@ -53,8 +56,8 @@
 
     <!-- Buscador -->
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Buscar religión, orden o fraternidad..." />
-      <ul id="resultsList" class="search-results"></ul>
+      <input type="text" id="searchInput" placeholder="Buscar religión, orden o fraternidad...">
+      <ul id="results" class="search-results"></ul>
     </div>
 
     <p>La historia humana está profundamente entrelazada con la influencia de las religiones, órdenes y fraternidades. A lo largo de los siglos, estas instituciones han moldeado culturas, sociedades y filosofías, dejando una huella imborrable en el desarrollo del pensamiento, las costumbres y las estructuras sociales.</p>
@@ -75,34 +78,35 @@
   </footer>
 
   <script>
-    const pages = [
-      { name: "Budismo", url: "religiones/budismo.html" },
-      { name: "Caodaísmo", url: "religiones/caodaismo.html" },
-      { name: "Candomblé", url: "religiones/candomble.html" },
-      { name: "Chamanismo", url: "religiones/chamanismo.html" },
-      { name: "Confucianismo", url: "religiones/confucianismo.html" },
-      { name: "Cristianismo", url: "religiones/cristianismo.html" },
-      // Aquí irán todas las demás religiones, órdenes y fraternidades
-    ];
+    async function cargarPaginas() {
+      try {
+        const res = await fetch('paginas.json');
+        const paginas = await res.json();
 
-    const searchInput = document.getElementById('searchInput');
-    const resultsList = document.getElementById('resultsList');
+        const input = document.getElementById('searchInput');
+        const resultsList = document.getElementById('results');
 
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      resultsList.innerHTML = '';
-      if (query) {
-        const filtered = pages.filter(page => page.name.toLowerCase().includes(query));
-        filtered.forEach(page => {
-          const li = document.createElement('li');
-          const link = document.createElement('a');
-          link.href = page.url;
-          link.textContent = page.name;
-          li.appendChild(link);
-          resultsList.appendChild(li);
+        input.addEventListener('input', () => {
+          const query = input.value.toLowerCase();
+          resultsList.innerHTML = '';
+
+          if (query.length > 1) {
+            const filtradas = paginas.filter(p => p.nombre.toLowerCase().includes(query));
+            filtradas.forEach(pagina => {
+              const li = document.createElement('li');
+              const a = document.createElement('a');
+              a.href = pagina.ruta;
+              a.textContent = pagina.nombre;
+              li.appendChild(a);
+              resultsList.appendChild(li);
+            });
+          }
         });
+      } catch (error) {
+        console.error('Error cargando paginas.json:', error);
       }
-    });
+    }
+    cargarPaginas();
   </script>
 
 </body>
