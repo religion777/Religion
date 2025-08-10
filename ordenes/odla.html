@@ -6,44 +6,156 @@
   <title>Orden de los Augures - Proyecto Órdenes</title>
   <link rel="stylesheet" href="../css/estilos.css" />
   <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #fafafa;
+      margin: 0;
+      padding: 0 1em;
+    }
+    nav.nav-container {
+      background: #2c3e50;
+      padding: 1em;
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    nav.nav-container a {
+      color: #ecf0f1;
+      margin: 0 1em;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav.nav-container a:hover,
+    nav.nav-container a:focus {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 2em;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .intro {
+      background: #eaf1f8;
+      border-left: 6px solid #2980b9;
+      padding: 1em 1.5em;
+      font-size: 1.1em;
+      margin-bottom: 2em;
+      border-radius: 4px;
+    }
+    nav[indice] ul.indice {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 2em;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+    ul.indice li {
+      background: #2980b9;
+      border-radius: 20px;
+      padding: 0.5em 1em;
+      transition: background-color 0.3s ease;
+    }
+    ul.indice li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95em;
+    }
+    ul.indice li:hover,
+    ul.indice li:focus-within {
+      background: #1c5980;
+    }
     figure {
       margin: 2em 0;
+      text-align: center;
     }
     figcaption {
-      text-align: center;
       font-style: italic;
       font-size: 0.9em;
       color: #555;
+      margin-top: 0.5em;
     }
     img {
       max-width: 100%;
       height: auto;
       display: block;
       margin: 1em auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    blockquote {
+      font-style: italic;
+      border-left: 4px solid #2980b9;
+      margin: 1.5em 0;
+      padding-left: 1em;
+      color: #555;
+      background: #f4f8fb;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5em 0;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 3em;
+      border-top: 1px solid #ddd;
+    }
+    /* Sección curiosidades */
+    .curiosidades {
+      background: #f0f4f7;
+      border-radius: 6px;
+      padding: 1em 1.5em;
+      margin-top: 2em;
+      color: #2c3e50;
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+    }
+    .curiosidades h3 {
+      margin-top: 0;
     }
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <a href="../index.html">Inicio</a>
-      <a href="../religiones.html">Religiones</a>
-      <a href="../ordenes.html">Órdenes</a>
-      <a href="../fraternidades.html">Fraternidades</a>
-      <a href="../miembro.html">¿Desea ser miembro?</a>
-    </div>
+  <nav class="nav-container" role="navigation" aria-label="Menú principal">
+    <a href="../index.html">Inicio</a>
+    <a href="../religiones.html">Religiones</a>
+    <a href="../ordenes.html">Órdenes</a>
+    <a href="../fraternidades.html">Fraternidades</a>
+    <a href="../miembro.html">¿Desea ser miembro?</a>
   </nav>
 
-  <main>
-    <h1>Orden de los Augures</h1>
+  <main role="main" aria-labelledby="titulo-principal">
+    <h1 id="titulo-principal">Orden de los Augures</h1>
+
+    <p class="intro">
+      La Orden de los Augures es una sociedad iniciática envuelta en misterio y tradición ancestral, donde se entrelazan la historia, el simbolismo y la búsqueda del conocimiento profundo. Descubre su legado oculto, sus doctrinas y su influencia a lo largo de los siglos.
+    </p>
+
+    <nav indice aria-label="Índice del contenido">
+      <ul class="indice">
+        <li><a href="#historia">Historia y Origen</a></li>
+        <li><a href="#doctrinas">Doctrinas y Creencias</a></li>
+        <li><a href="#estructura">Estructura y Jerarquías</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#notas">Notas adicionales</a></li>
+      </ul>
+    </nav>
 
     <figure>
       <img src="Imagenesodla/Screenshot_20250807_121658_YouTube.jpg" alt="Logo de la Orden de los Augures (O.d.l.A)" />
       <figcaption>Presunto logo de la Orden de los Augures.</figcaption>
     </figure>
 
-    <section>
-      <h2>Historia y Origen</h2>
+    <section id="historia" aria-labelledby="historia-titulo">
+      <h2 id="historia-titulo">Historia y Origen</h2>
       <p>
         La Orden de los Augures (O.d.l.A) constituye una de las entidades más enigmáticas del estudio histórico comparado de las órdenes iniciáticas. Su mención directa en documentos históricos es extremadamente escasa, y nuestros investigadores solo han podido reconstruir su desarrollo a través de referencias indirectas, citas fragmentarias y relatos marginales en documentos de otras órdenes o instituciones.
       </p>
@@ -51,50 +163,55 @@
         Según los escasos vestigios disponibles, la O.d.l.A habría surgido formalmente hacia el año 350 d.C., heredando la tradición de la llamada <em>Orden Sacerdotal de los Augures</em>, vigente entre el 50 a.C. y el 350 d.C., la cual a su vez habría evolucionado a partir de los augures romanos clásicos.
       </p>
       <p>
-        No obstante, la génesis de esta tradición religiosa y gnóstica podría rastrearse hasta el 3000 a.C., en territorios protoceltas situados en la región de la antigua Etruria.Se presume que las prácticas augurales —ya entonces ligadas a un conocimiento naturalista y simbólico— descendieron hacia Roma, influenciando incluso, según algunos mitógrafos, la fundación de la ciudad misma a través de la figura de Rómulo. Durante este largo proceso, miembros de esta corriente se habrían diseminado por vastas regiones del Mediterráneo, el norte de África, los territorios celtas del oeste europeo, e incluso ciertas zonas del antiguo Levante y Japón, estableciendo contactos esotéricos interculturales que permanecen aún en estudio.
-      </p>
-      <p>
-        El hermetismo estructural de la O.d.l.A ha generado grandes desafíos para la historiografía académica. La escasez de documentos firmados o manifiestos doctrinales ha obligado a los investigadores a depender de fuentes terciarias. Entre estas se encuentran menciones críticas, como la famosa carta de Adam Weishaupt dirigida a la Universidad de Ingolstadt en el siglo XVIII, en la que califica a los augures como “irracionales, animistas, guardianes del conocimiento velado bajo un marco seudorreligioso de carácter casi sectario”. Este tipo de documentos, aunque hostiles, ofrecen una valiosa ventana a la existencia continua —aunque clandestina— de la orden.
-      </p>
-      <p>
-        Durante la expansión cristiana en el Imperio Romano, la orden adoptó una postura migratoria, desplazándose hacia el norte de Europa, donde algunos miembros fueron confundidos con druidas por sus prácticas rituales y su conexión con el paisaje y el simbolismo natural. Posteriormente, en los siglos oscuros de la Inquisición, la O.d.l.A desapareció completamente de los registros oficiales, adoptando una existencia subterránea.
-      </p>
-      <p>
-        Su reaparición documentada se da en el siglo XX, cuando, según registros de inmigración eclesiástica, ciertos individuos provenientes del norte de Italia habrían trasladado sus prácticas y códices hacia Uruguay, en torno al año 1920. Desde entonces, la orden habría mantenido una presencia discreta pero constante, pasando de ser una sociedad estrictamente secreta a una organización discreta, bajo la guía de un Maestro contemporáneo cuya identidad y declaraciones públicas son escasas y cuidadosamente reguladas. No se conocen miembros activos por nombre o rostro, salvo algunos testimonios anecdóticos de individuos que aseguran haber presenciado ceremonias o haber sido influenciados por algún augur actual.
-</p>
-    </section>
+        No obstante, la génesis de esta tradición religiosa y gnóstica podría rastrearse hasta el 3000 a.C., en territorios protoceltas situados en la región de la antigua Etruria. Se presume que las prácticas augurales —ya entonces ligadas a un conocimiento naturalista y simbólico— descendieron hacia Roma, influenciando incluso, según algunos mitógrafos, la fundación de la ciudad misma a través de la figura de Rómulo. Durante este largo proceso, miembros de esta corriente se habrían diseminado por vastas regiones del Mediterráneo, el norte de África, los territorios celtas del oeste europeo, e incluso ciertas zonas del antiguo Levante y Japón, estableciendo contactos esotéricos interculturales que permanecen aún en estudio.
+      </p>
+      <blockquote>
+        “Irracionales, animistas, guardianes del conocimiento velado bajo un marco seudorreligioso de carácter casi sectario.” – Adam Weishaupt, siglo XVIII
+      </blockquote>
+      <p>
+        Durante la expansión cristiana en el Imperio Romano, la orden adoptó una postura migratoria, desplazándose hacia el norte de Europa, donde algunos miembros fueron confundidos con druidas por sus prácticas rituales y su conexión con el paisaje y el simbolismo natural. Posteriormente, en los siglos oscuros de la Inquisición, la O.d.l.A desapareció completamente de los registros oficiales, adoptando una existencia subterránea.
+      </p>
+      <p>
+        Su reaparición documentada se da en el siglo XX, cuando, según registros de inmigración eclesiástica, ciertos individuos provenientes del norte de Italia habrían trasladado sus prácticas y códices hacia Uruguay, en torno al año 1920. Desde entonces, la orden ha mantenido una presencia discreta pero constante, pasando de ser una sociedad estrictamente secreta a una organización discreta, bajo la guía de un Maestro contemporáneo cuya identidad y declaraciones públicas son escasas y cuidadosamente reguladas. No se conocen miembros activos por nombre o rostro, salvo algunos testimonios anecdóticos de individuos que aseguran haber presenciado ceremonias o haber sido influenciados por algún augur actual.
+      </p>
+    </section>
 
-    <section>
-      <h2>Doctrinas y Creencias</h2>
-      <p>
-        La cosmovisión de la Orden de los Augures se caracteriza por un sincretismo elaborado, integrando disciplinas científicas, filosóficas y esotéricas. Las referencias existentes indican que su corpus doctrinal está estructurado en torno a tres grandes ejes: las ciencias duras, las ciencias humanas y las denominadas ciencias mágicas o arcanas.
-      </p>
-      <p>
-        En el ámbito de las ciencias duras, los augures estudian matemáticas, geometría, física, astronomía y disciplinas naturales. Paralelamente, cultivan saberes vinculados a la historia, la filosofía (con énfasis en la tradición griega), la psicología, la política y la retórica, esta última no solo como arte argumentativo, sino como herramienta de transformación simbólica del pensamiento y la percepción.
-      </p>
-      <p>
-        En cuanto a las ciencias arcanas, se presume que mantienen prácticas relacionadas con la meditación profunda, la contemplación ritual, la manipulación de símbolos, el uso de geometrías sagradas y la comunicación con entidades o energías sutiles. Estas creencias animistas no están asociadas a una religión formal, sino que forman parte de un sistema iniciático progresivo, en el cual la experiencia directa y el conocimiento interno prevalecen sobre la liturgia externa.
-      </p>
-      <p>
-        La O.d.l.A no adscribe a una verdad revelada única, sino que actúa como recolectora y reorganizadora de saberes ancestrales y contemporáneos. Su objetivo parecería ser el desarrollo integral del individuo a través de un prolongado proceso de estudio, reflexión y transformación personal. Alcanzar el grado de <em>Augur</em> dentro de la orden puede llevar, según las fuentes, hasta veinte años de formación continua y evaluaciones rigurosas.
-      </p>
-      <p>
-        En esta tradición, el conocimiento no se concibe como un bien acumulable, sino como una manifestación de la transparencia interior. El silencio y la discreción no son signos de ocultamiento, sino de respeto hacia el proceso de maduración interna del saber. En consecuencia, la orden no practica proselitismo ni evangelización, manteniéndose hermética por convicción más que por elitismo.
-      </p>
-    </section>
+    <section id="doctrinas" aria-labelledby="doctrinas-titulo">
+      <h2 id="doctrinas-titulo">Doctrinas y Creencias</h2>
+      <p>
+        La cosmovisión de la Orden de los Augures se caracteriza por un sincretismo elaborado, integrando disciplinas científicas, filosóficas y esotéricas. Su corpus doctrinal está estructurado en torno a tres grandes ejes: las ciencias duras, las ciencias humanas y las denominadas ciencias mágicas o arcanas.
+      </p>
+      <p>
+        En el ámbito de las ciencias duras, los augures estudian matemáticas, geometría, física, astronomía y disciplinas naturales. Paralelamente, cultivan saberes vinculados a la historia, la filosofía (con énfasis en la tradición griega), la psicología, la política y la retórica, esta última no solo como arte argumentativo, sino como herramienta de transformación simbólica del pensamiento y la percepción.
+      </p>
+      <p>
+        En cuanto a las ciencias arcanas, se presume que mantienen prácticas relacionadas con la meditación profunda, la contemplación ritual, la manipulación de símbolos, el uso de geometrías sagradas y la comunicación con entidades o energías sutiles. Estas creencias animistas no están asociadas a una religión formal, sino que forman parte de un sistema iniciático progresivo, en el cual la experiencia directa y el conocimiento interno prevalecen sobre la liturgia externa.
+      </p>
+      <p>
+        La doctrina de la orden se basa en la veneración y entendimiento profundo de los cuatro elementos —tierra, agua, fuego y aire— que se consideran manifestaciones fundamentales del cosmos y la psique humana. La inmortalidad del alma es un principio central, acompañada de la búsqueda de la <em>Sophia</em>, entendida como la sabiduría primordial y universal. Asimismo, se estudian y meditan las primeras siete inteligencias, consideradas facultades esenciales que rigen la percepción y la interpretación del mundo.
+      </p>
+      <p>
+        Para interpretar la realidad y sus múltiples dimensiones, los augures se apoyan en la lectura de señales —fenómenos naturales, símbolos y eventos cotidianos— y en la profunda interpretación de estas, que les permite conectar el plano material con el espiritual, entendiendo el flujo invisible que rige la existencia.
+      </p>
+      <p>
+        La O.d.l.A no adscribe a una verdad revelada única, sino que actúa como recolectora y reorganizadora de saberes ancestrales y contemporáneos. Su objetivo es el desarrollo integral del individuo a través de un prolongado proceso de estudio, reflexión y transformación personal. Alcanzar el grado de <em>Augur</em> dentro de la orden puede llevar hasta veinte años de formación continua y rigurosas evaluaciones.
+      </p>
+      <p>
+        En esta tradición, el conocimiento no se concibe como un bien acumulable, sino como una manifestación de la transparencia interior. El silencio y la discreción no son signos de ocultamiento, sino de respeto hacia el proceso de maduración interna del saber. Por ello, la orden no practica proselitismo ni evangelización, manteniéndose hermética por convicción y respeto.
+      </p>
+    </section>
 
-    <section>
-      <h2>Estructura y Jerarquías</h2>
-      <p>
-        Hasta donde sabemos, existen dos ramas principales dentro de la Orden de los Augures: la O.d.l.A occidental, también llamada O.d.l.A romana, y la O.d.l.A oriental, originaria de la India. La rama romana a su vez se organiza en dos estructuras: una interna, desconocida y hermética, y una externa, protocolar y visible en sus formas.
-      </p>
-      <p>
-        La estructura externa presenta dos jerarquías paralelas. La primera, por función, está encabezada por el Maestro y el Matter, seguidos por seis Ministros: uno encargado del cuerpo, otro de la mente, y cuatro espirituales, cada uno asociado a uno de los cuatro elementos clásicos (tierra, agua, fuego y aire). Además, se cuentan los Guardianes, cuya función es custodiar los secretos y proteger la integridad de la orden.
-      </p>
-      <p>
-        La segunda jerarquía, por grados de iniciación, incluye cinco niveles ascendentes: Iniciado, Aprendiz, Gnósofo, Filósofo y finalmente Augur, que representa el rango más alto al que un miembro puede aspirar tras un prolongado proceso de estudio y práctica.
-      </p>
-
+    <section id="estructura" aria-labelledby="estructura-titulo">
+      <h2 id="estructura-titulo">Estructura y Jerarquías</h2>
+      <p>
+        Hasta donde se sabe, existen dos ramas principales dentro de la Orden de los Augures: la O.d.l.A occidental, también llamada O.d.l.A romana, y la O.d.l.A oriental, originaria de la India. La rama romana a su vez se organiza en dos estructuras: una interna, desconocida y hermética, y una externa, protocolar y visible en sus formas.
+      </p>
+      <p>
+        La estructura externa presenta dos jerarquías paralelas. La primera, por función, está encabezada por el Maestro y el Matter, seguidos por seis Ministros: uno encargado del cuerpo, otro de la mente, y cuatro espirituales, cada uno asociado a uno de los cuatro elementos clásicos (tierra, agua, fuego y aire). Además, existen los Guardianes, cuya función es custodiar los secretos y proteger la integridad de la orden.
+      </p>
+      <p>
+        La segunda jerarquía, por grados de iniciación, incluye cinco niveles ascendentes: Iniciado, Aprendiz, Gnósofo, Filósofo y finalmente Augur, que representa el rango más alto al que un miembro puede aspirar tras un prolongado proceso de estudio y práctica.
+      </p>
     </section>
 
     <figure>
@@ -102,8 +219,18 @@
       <figcaption>Captura del video público con el Maestro Ariel, líder actual de la O.d.l.A.</figcaption>
     </figure>
 
-    <section>
-      <h2>Notas adicionales</h2>
+    <section id="curiosidades" class="curiosidades" aria-labelledby="curiosidades-titulo">
+      <h3 id="curiosidades-titulo">Curiosidades y Mitos</h3>
+      <ul>
+        <li><strong>Mitos druidas:</strong> Por sus prácticas rituales relacionadas con la naturaleza y el simbolismo elemental, algunos miembros de la orden fueron confundidos históricamente con druidas, especialmente durante la migración hacia el norte de Europa.</li>
+        <li><strong>Relación con la fundación de Roma:</strong> Algunas tradiciones mitológicas sugieren que los augures influenciaron directamente la fundación de Roma a través de la figura legendaria de Rómulo, aunque esto no está confirmado documentalmente.</li>
+        <li><strong>Presencia global:</strong> La orden habría tenido contactos esotéricos interculturales que la conectan con regiones tan distantes como el Levante y Japón, lo que evidencia su naturaleza sincrética y adaptable.</li>
+        <li><strong>Secretismo estricto:</strong> Su hermetismo llevó a que, durante la Inquisición, la orden desapareciera de los registros oficiales, viviendo en la clandestinidad durante siglos.</li>
+      </ul>
+    </section>
+
+    <section id="notas" aria-labelledby="notas-titulo">
+      <h2 id="notas-titulo">Notas adicionales</h2>
       <p>
         Aunque existe un video donde el Maestro Ariel aparece en cámara hablando sobre la orden, no se proporciona el enlace por razones de neutralidad informativa. La intención de este documento es informar y documentar sin promover ni desalentar afiliación alguna.
       </p>
