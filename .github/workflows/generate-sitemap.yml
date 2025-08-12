@@ -1,0 +1,51 @@
+name: Generar Sitemap Automático
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio (historia completa)
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generar sitemap.xml
+        run: |
+          set -e
+          SITE_BASE="https://religion777.github.io/Religion"
+          OUTFILE="sitemap.xml"
+          echo '<?xml version="1.0" encoding="UTF-8"?>' > "${OUTFILE}"
+          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "${OUTFILE}"
+          # Buscamos todos los .html, ordenados
+          find . -type f -name "*.html" ! -path "./.git/*" ! -path "./.github/*" | sort | while read -r file; do
+            filepath=${file#./}
+            # Normalizamos URL (evitar múltiples ./ o barras)
+            url="${SITE_BASE}/${filepath}"
+            # Obtenemos la fecha del último commit para ese archivo en formato ISO 8601
+            lastmod=$(git log -1 --format=%cI -- "$file" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")
+            echo "  <url>" >> "${OUTFILE}"
+            echo "    <loc>${url}</loc>" >> "${OUTFILE}"
+            echo "    <lastmod>${lastmod}</lastmod>" >> "${OUTFILE}"
+            echo "  </url>" >> "${OUTFILE}"
+          done
+          echo '</urlset>' >> "${OUTFILE}"
+          echo "=== sitemap generado ==="
+          wc -l "${OUTFILE}" || true
+          cat "${OUTFILE}" | sed -n '1,200p'
+
+      - name: Commit y push del sitemap si cambió
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git add sitemap.xml && git diff --cached --quiet; then
+            echo "No hay cambios en sitemap.xml"
+          else
+            git commit -m "chore: actualizar sitemap.xml (generado automáticamente)"
+            git push
+          fi
