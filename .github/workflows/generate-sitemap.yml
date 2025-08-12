@@ -22,12 +22,9 @@ jobs:
           OUTFILE="sitemap.xml"
           echo '<?xml version="1.0" encoding="UTF-8"?>' > "${OUTFILE}"
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> "${OUTFILE}"
-          # Buscamos todos los .html, ordenados
           find . -type f -name "*.html" ! -path "./.git/*" ! -path "./.github/*" | sort | while read -r file; do
             filepath=${file#./}
-            # Normalizamos URL (evitar múltiples ./ o barras)
             url="${SITE_BASE}/${filepath}"
-            # Obtenemos la fecha del último commit para ese archivo en formato ISO 8601
             lastmod=$(git log -1 --format=%cI -- "$file" 2>/dev/null || date -u +"%Y-%m-%dT%H:%M:%SZ")
             echo "  <url>" >> "${OUTFILE}"
             echo "    <loc>${url}</loc>" >> "${OUTFILE}"
@@ -43,10 +40,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add sitemap.xml
-          if git diff --cached --quiet; then
+
+          if git diff --quiet sitemap.xml; then
             echo "No hay cambios en sitemap.xml"
           else
+            git add sitemap.xml
             git commit -m "chore: actualizar sitemap.xml (generado automáticamente)"
             git push
           fi
