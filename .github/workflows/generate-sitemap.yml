@@ -37,13 +37,14 @@ jobs:
           echo '</urlset>' >> "${OUTFILE}"
           echo "=== sitemap generado ==="
           wc -l "${OUTFILE}" || true
-          cat "${OUTFILE}" | sed -n '1,200p'
+          head -n 200 "${OUTFILE}"
 
       - name: Commit y push del sitemap si cambió
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git add sitemap.xml && git diff --cached --quiet; then
+          git add sitemap.xml
+          if git diff --cached --quiet; then
             echo "No hay cambios en sitemap.xml"
           else
             git commit -m "chore: actualizar sitemap.xml (generado automáticamente)"
